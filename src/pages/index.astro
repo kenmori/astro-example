@@ -3,7 +3,15 @@ import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Lists from '../components/lists.astro';
 import Item from "../components/item.astro";
-const posts = [{ title: "my life"}, {title: "my life2"}, {title: "my life 3"}]
+import { ghostClient } from '../lib/ghost';
+const posts = await ghostClient.posts
+    .browse({
+        limit: 'all',
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+console.log(posts)
 ---
 
 <Layout title="template">
