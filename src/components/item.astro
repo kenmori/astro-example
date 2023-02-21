@@ -5,6 +5,7 @@ const {posts} = Astro.props
 <!--jsx -->
 {posts.map((post, i) => <li class={i === 0 ? "first" : ""}><h3>{post.title}</h3></li>)}
 
+
 <style>
 .first {
   color: red;

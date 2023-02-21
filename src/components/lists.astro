@@ -1,9 +1,7 @@
 ---
-import Item from "./item.astro"
-const posts = [{ title: "my life"}, {title: "my life2"}, {title: "my life 3"}]
 const Ul = "ul" // 大文字にする必要がある
 ---
 
 <Ul>
-  <Item posts={posts} />
+  <slot/>
 </Ul>
